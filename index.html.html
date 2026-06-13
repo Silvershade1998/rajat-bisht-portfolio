@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rajat Singh Bisht — QA Validation Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#0C0C0C;font-family:'Kanit',sans-serif;color:#D7E2EA;overflow-x:hidden;scroll-behavior:smooth}
+  .hero-text{background:linear-gradient(180deg,#646973 0%,#BBCCD7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  section{position:relative}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2.5rem;position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,12,12,0.85);backdrop-filter:blur(8px)}
+  nav a{color:#D7E2EA;text-decoration:none;font-weight:500;font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.85;transition:opacity 0.2s}
+  nav a:hover{opacity:1}
+  .contact-btn{background:linear-gradient(123deg,#0a1a2e 7%,#1a4a8a 37%,#0d6b72 72%,#0a4a5e 100%);border:2px solid rgba(215,226,234,0.4);color:#fff;padding:0.6rem 1.8rem;border-radius:50px;font-family:'Kanit',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block}
+  .contact-btn:hover{border-color:#D7E2EA;opacity:0.9}
+
+  #hero{min-height:100vh;display:flex;flex-direction:column;padding:0 2.5rem;overflow:hidden}
+  .hero-name{font-size:clamp(3.5rem,11vw,9rem);font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;line-height:0.95;white-space:nowrap;margin-top:5.5rem}
+  .hero-tagline-row{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:2rem;margin-top:auto;flex-wrap:wrap;gap:1rem}
+  .hero-tagline{color:#D7E2EA;font-weight:300;text-transform:uppercase;letter-spacing:0.08em;line-height:1.4;max-width:280px;font-size:clamp(0.7rem,1.2vw,0.95rem)}
+  .hero-badges{display:flex;flex-direction:column;gap:0.4rem;align-items:flex-end}
+  .badge{background:rgba(215,226,234,0.08);border:1px solid rgba(215,226,234,0.2);color:#D7E2EA;padding:0.25rem 0.75rem;border-radius:50px;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500}
+  .hero-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 0}
+  .hero-molecule{width:220px;height:220px;position:relative;cursor:pointer}
+  .molecule-ring{position:absolute;border:1px solid rgba(215,226,234,0.15);border-radius:50%;animation:spin 20s linear infinite}
+  .r1{width:100%;height:100%;top:0;left:0}
+  .r2{width:70%;height:70%;top:15%;left:15%;animation-direction:reverse;animation-duration:14s}
+  .r3{width:40%;height:40%;top:30%;left:30%;animation-duration:8s}
+  .molecule-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+  .molecule-dot{width:12px;height:12px;background:#D7E2EA;border-radius:50%;margin:0 auto 0.3rem}
+  .molecule-label{font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(215,226,234,0.5);line-height:1.4}
+  .orbit-dot{position:absolute;width:8px;height:8px;background:#D7E2EA;border-radius:50%;top:-4px;left:50%;transform:translateX(-50%)}
+  @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;width:100%;max-width:500px}
+  .stat{text-align:center}
+  .stat-num{font-size:1.8rem;font-weight:700;line-height:1}
+  .stat-lbl{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(215,226,234,0.5);margin-top:0.2rem}
+
+  #marquee{padding:4rem 0 2rem;background:#0C0C0C;overflow:hidden}
+  .marquee-item{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(215,226,234,0.06);border:1px solid rgba(215,226,234,0.12);border-radius:8px;padding:0.6rem 1.2rem;flex-shrink:0;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(215,226,234,0.7);white-space:nowrap}
+  .marquee-dot{width:6px;height:6px;background:rgba(215,226,234,0.4);border-radius:50%;flex-shrink:0}
+  .marquee-track{display:flex;gap:1rem;animation:marquee1 30s linear infinite;width:max-content}
+  .marquee-track2{display:flex;gap:1rem;animation:marquee2 25s linear infinite;width:max-content}
+  @keyframes marquee1{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes marquee2{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+
+  #about{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2.5rem;flex-direction:column;text-align:center}
+  .about-heading{font-size:clamp(3rem,10vw,8rem);font-weight:900;text-transform:uppercase;line-height:0.95;letter-spacing:-0.02em;margin-bottom:3rem}
+  .about-text{color:#D7E2EA;font-weight:400;max-width:580px;font-size:clamp(1rem,1.8vw,1.2rem);line-height:1.8;opacity:0.85;margin-bottom:2.5rem}
+  .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:580px;margin-top:1rem}
+  .about-card{background:rgba(215,226,234,0.05);border:1px solid rgba(215,226,234,0.1);border-radius:12px;padding:1rem;text-align:center}
+  .about-card-icon{font-size:1.5rem;margin-bottom:0.3rem}
+  .about-card-title{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(215,226,234,0.6);font-weight:500}
+
+  #expertise{background:#ffffff;border-radius:50px 50px 0 0;padding:5rem 2.5rem}
+  .section-heading{font-size:clamp(3rem,10vw,8rem);font-weight:900;text-transform:uppercase;line-height:0.95;letter-spacing:-0.02em;text-align:center;color:#0C0C0C;margin-bottom:4rem}
+  .expertise-list{max-width:800px;margin:0 auto}
+  .expertise-item{display:flex;align-items:flex-start;gap:2rem;padding:2rem 0;border-bottom:1px solid rgba(12,12,12,0.1)}
+  .expertise-item:first-child{border-top:1px solid rgba(12,12,12,0.1)}
+  .exp-icon{font-size:2rem;flex-shrink:0;width:48px;text-align:center;margin-top:0.2rem}
+  .exp-name{font-size:clamp(1rem,2vw,1.5rem);font-weight:700;text-transform:uppercase;color:#0C0C0C;letter-spacing:0.03em}
+  .exp-desc{font-size:clamp(0.8rem,1.4vw,1rem);color:rgba(12,12,12,0.55);line-height:1.6;margin-top:0.3rem;font-weight:300;max-width:580px}
+
+  #experience{background:#0C0C0C;border-radius:50px 50px 0 0;padding:5rem 2.5rem;margin-top:-40px;position:relative;z-index:10}
+  .exp-heading{font-size:clamp(3rem,10vw,8rem);font-weight:900;text-transform:uppercase;line-height:0.95;letter-spacing:-0.02em;text-align:center;margin-bottom:4rem}
+  .timeline{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:1.5rem}
+  .timeline-card{background:rgba(215,226,234,0.04);border:1px solid rgba(215,226,234,0.12);border-radius:20px;padding:2rem}
+  .tc-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem}
+  .tc-company{font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#D7E2EA}
+  .tc-role{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(215,226,234,0.5);margin-top:0.2rem;font-weight:400}
+  .tc-period{font-size:0.7rem;background:rgba(215,226,234,0.08);border:1px solid rgba(215,226,234,0.15);border-radius:50px;padding:0.2rem 0.8rem;color:rgba(215,226,234,0.6);white-space:nowrap;letter-spacing:0.08em}
+  .tc-current{background:rgba(13,107,114,0.2);border-color:rgba(13,107,114,0.4);color:#5acfcf}
+  .tc-highlights{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+  .tc-highlights li{font-size:0.85rem;color:rgba(215,226,234,0.65);line-height:1.5;padding-left:1rem;position:relative;font-weight:300}
+  .tc-highlights li::before{content:'→';position:absolute;left:0;color:rgba(215,226,234,0.3);font-size:0.75rem;top:0.15rem}
+
+  #contact{background:#0C0C0C;padding:5rem 2.5rem 4rem;text-align:center}
+  .contact-heading{font-size:clamp(2.5rem,8vw,6rem);font-weight:900;text-transform:uppercase;line-height:0.95;letter-spacing:-0.02em;margin-bottom:1rem}
+  .contact-sub{color:rgba(215,226,234,0.5);font-size:1rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:300;margin-bottom:2.5rem}
+  .contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+  .contact-link{display:flex;align-items:center;gap:0.5rem;color:#D7E2EA;text-decoration:none;background:rgba(215,226,234,0.06);border:1px solid rgba(215,226,234,0.15);border-radius:50px;padding:0.6rem 1.4rem;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;transition:all 0.2s}
+  .contact-link:hover{background:rgba(215,226,234,0.1);border-color:rgba(215,226,234,0.3)}
+  .footer-line{border-top:1px solid rgba(215,226,234,0.1);padding-top:2rem;font-size:0.75rem;color:rgba(215,226,234,0.3);letter-spacing:0.08em;text-transform:uppercase;margin-top:4rem}
+
+  .fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+  .fade-up.visible{opacity:1;transform:none}
+
+  @media(max-width:600px){
+    nav{padding:1rem 1.2rem;flex-wrap:wrap;gap:0.5rem}
+    nav a{font-size:0.75rem}
+    #hero{padding:0 1.2rem}
+    .hero-name{font-size:clamp(2.5rem,14vw,5rem);white-space:normal}
+    #about,#expertise,#experience,#contact{padding:4rem 1.2rem}
+    .expertise-item{flex-direction:column;gap:0.8rem}
+    .contact-links{flex-direction:column;align-items:center}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#expertise">Expertise</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+  <a href="mailto:rajatbisht915@gmail.com" class="contact-btn">Hire Me</a>
+</nav>
+
+<section id="hero">
+  <div class="hero-name hero-text fade-up">Rajat Singh<br>Bisht</div>
+  <div class="hero-center fade-up">
+    <div class="hero-molecule">
+      <div class="molecule-ring r1"><div class="orbit-dot"></div></div>
+      <div class="molecule-ring r2"><div class="orbit-dot"></div></div>
+      <div class="molecule-ring r3"><div class="orbit-dot"></div></div>
+      <div class="molecule-center">
+        <div class="molecule-dot"></div>
+        <div class="molecule-label">GMP<br>Validated</div>
+      </div>
+    </div>
+    <div class="hero-stats fade-up">
+      <div class="stat">
+        <div class="stat-num hero-text">3+</div>
+        <div class="stat-lbl">Years in QA</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num hero-text">3</div>
+        <div class="stat-lbl">Companies</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num hero-text">CV</div>
+        <div class="stat-lbl">Primary Specialty</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-tagline-row fade-up">
+    <div class="hero-tagline">Quality Assurance Specialist · Cleaning Validation · CSV / GAMP 5 · Himachal Pradesh, India</div>
+    <div class="hero-badges">
+      <span class="badge">HBEL / PDE</span>
+      <span class="badge">GAMP 5</span>
+      <span class="badge">IQ / OQ / PQ</span>
+    </div>
+  </div>
+</section>
+
+<section id="marquee">
+  <div style="overflow:hidden;margin-bottom:0.75rem"><div class="marquee-track" id="m1"></div></div>
+  <div style="overflow:hidden"><div class="marquee-track2" id="m2"></div></div>
+</section>
+
+<section id="about">
+  <div class="about-heading hero-text fade-up">About Me</div>
+  <p class="about-text fade-up">
+    Pharmaceutical QA professional specialising in Cleaning Validation under HBEL/PDE methodologies — from MACO calculations and swab/rinse limit definitions to DHT/CHT studies and coupon recovery. Backed by hands-on expertise in Equipment Qualification, HVAC/AHU requalification, and Computer System Validation under GAMP 5 and 21 CFR Part 11.
+  </p>
+  <div class="about-grid fade-up">
+    <div class="about-card"><div class="about-card-icon">⚗️</div><div class="about-card-title">Cleaning Validation</div></div>
+    <div class="about-card"><div class="about-card-icon">🖥️</div><div class="about-card-title">CSV / GAMP 5</div></div>
+    <div class="about-card"><div class="about-card-icon">🔬</div><div class="about-card-title">Equipment Qual.</div></div>
+  </div>
+  <div style="margin-top:2.5rem" class="fade-up">
+    <a href="mailto:rajatbisht915@gmail.com" class="contact-btn">Get in Touch</a>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="section-heading fade-up">Expertise</div>
+  <div class="expertise-list">
+    <div class="expertise-item fade-up">
+      <div class="exp-icon">⚗️</div>
+      <div>
+        <div class="exp-name">Cleaning Validation</div>
+        <div class="exp-desc">End-to-end CV lifecycle using HBEL/PDE methodology — MACO calculations, swab & rinse limit definitions, Dirty/Clean Hold Time studies, Visible Residue Limit assessments, coupon recovery studies, and worst-case product selection. Experienced with CLEEN by Leucine and e-Residue digital platforms.</div>
+      </div>
+    </div>
+    <div class="expertise-item fade-up">
+      <div class="exp-icon">🔧</div>
+      <div>
+        <div class="exp-name">Equipment & Utility Qualification</div>
+        <div class="exp-desc">IQ/OQ/PQ and FAT/SAT for RMG, FBD, autoclaves, compression and coating machines. Purified Water Generation, Compressed Air, and Nitrogen gas system qualification. Thermal mapping of autoclaves, stability chambers, cold rooms, and warehouses.</div>
+      </div>
+    </div>
+    <div class="expertise-item fade-up">
+      <div class="exp-icon">🏗️</div>
+      <div>
+        <div class="exp-name">HVAC / AHU Requalification</div>
+        <div class="exp-desc">Full HVAC/AHU requalification documentation and execution in compliance with GMP requirements. Airflow pattern studies, temperature/humidity mapping, and filter integrity testing across manufacturing and packaging areas.</div>
+      </div>
+    </div>
+    <div class="expertise-item fade-up">
+      <div class="exp-icon">🖥️</div>
+      <div>
+        <div class="exp-name">Computer System Validation</div>
+        <div class="exp-desc">CSV and PLC validation under GAMP 5 software/hardware categorisation and 21 CFR Part 11 data integrity principles. Experienced with TrackWise, EQMS, SAP, BRMS — including digital transition from paper-based to e-system workflows.</div>
+      </div>
+    </div>
+    <div class="expertise-item fade-up">
+      <div class="exp-icon">📋</div>
+      <div>
+        <div class="exp-name">QMS & GMP Documentation</div>
+        <div class="exp-desc">Change Control, Deviation, Discrepancy, and CAPA management in EQMS for timely regulatory closure. Audit-ready Validation Master Files and qualification dossiers with full traceability. Inspection readiness for internal and regulatory audits.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="exp-heading hero-text fade-up">Experience</div>
+  <div class="timeline">
+    <div class="timeline-card fade-up">
+      <div class="tc-header">
+        <div>
+          <div class="tc-company">Tirupati Medicare Ltd.</div>
+          <div class="tc-role">Quality Assurance Sr. Officer · Himachal Pradesh</div>
+        </div>
+        <span class="tc-period tc-current">Sep 2025 – Present</span>
+      </div>
+      <ul class="tc-highlights">
+        <li>Lead CV activities under HBEL/PDE — MACO, swab/rinse sampling, DHT/CHT, VRL assessments</li>
+        <li>Author PV protocols, in-process sampling from granulation to packaging, and validation reports</li>
+        <li>IQ/OQ/PQ for RMG, FBD, autoclaves, compression and coating machines, vessels, and pumps</li>
+        <li>Hands-on PLC/CSV under GAMP 5; thermal mapping of autoclaves and stability chambers</li>
+        <li>Change Control, Deviations, CAPA management in EQMS for audit-ready dossiers</li>
+      </ul>
+    </div>
+    <div class="timeline-card fade-up">
+      <div class="tc-header">
+        <div>
+          <div class="tc-company">Sun Pharmaceutical Industries Ltd.</div>
+          <div class="tc-role">Quality Assurance Officer · Paonta Sahib</div>
+        </div>
+        <span class="tc-period">Sep 2024 – Aug 2025</span>
+      </div>
+      <ul class="tc-highlights">
+        <li>Led implementation of e-Residue software, transitioning paper-based CV to a fully digital system</li>
+        <li>Full-cycle Cleaning Validation for OSD lines — recipe locking/unlocking, scheduling, protocol drafting</li>
+        <li>Collaborated with Production, QC, and Regulatory Affairs for inspection readiness</li>
+        <li>Participated in Quality Circle initiatives to optimise process efficiency</li>
+      </ul>
+    </div>
+    <div class="timeline-card fade-up">
+      <div class="tc-header">
+        <div>
+          <div class="tc-company">Acme Generics Private Limited</div>
+          <div class="tc-role">Quality Assurance Trainee · Baddi</div>
+        </div>
+        <span class="tc-period">Oct 2023 – Aug 2024</span>
+      </div>
+      <ul class="tc-highlights">
+        <li>Developed CV protocols and final reports for FBD and Coating Machine duct cleaning using CLEEN by Leucine</li>
+        <li>MACO, swab, and rinse limit calculations using PDE-based reports; equipment matrix build in CLEEN</li>
+        <li>CHT/DHT study protocols and QRM documentation; Change Control optimisation via EQMS</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-heading hero-text fade-up">Let's<br>Connect</div>
+  <div class="contact-sub fade-up">Open to QA opportunities in Himachal Pradesh & beyond</div>
+  <div class="contact-links fade-up">
+    <a href="mailto:rajatbisht915@gmail.com" class="contact-link">✉ rajatbisht915@gmail.com</a>
+    <a href="tel:+917017776014" class="contact-link">📞 +91 70177 76014</a>
+    <a href="https://linkedin.com/in/rajat-bisht-5617allab" target="_blank" class="contact-link">🔗 LinkedIn Profile</a>
+  </div>
+  <div class="fade-up">
+    <a href="mailto:rajatbisht915@gmail.com" class="contact-btn" style="font-size:1rem;padding:1rem 2.5rem">Hire Me</a>
+  </div>
+  <div class="footer-line fade-up">
+    Rajat Singh Bisht · QA Validation Specialist · Dehradun, Uttarakhand · B.Pharm · CLEEN Certified
+  </div>
+</section>
+
+<script>
+const row1=['HBEL/PDE Methodology','Cleaning Validation','MACO Calculations','Swab & Rinse Limits','DHT / CHT Studies','Visible Residue Limit','CLEEN by Leucine','e-Residue Software','Coupon Recovery Studies','Worst-Case Product Selection','IQ / OQ / PQ'];
+const row2=['GAMP 5','CSV / PLC Validation','HVAC Requalification','Purified Water Qualification','Compressed Air Systems','Thermal Mapping','EQMS & TrackWise','SAP','Change Control','Deviation Management','CAPA Investigations'];
+function buildRow(items,el){
+  const doubled=[...items,...items];
+  doubled.forEach(txt=>{
+    const div=document.createElement('div');
+    div.className='marquee-item';
+    div.innerHTML='<span class="marquee-dot"></span>'+txt;
+    el.appendChild(div);
+  });
+}
+buildRow(row1,document.getElementById('m1'));
+buildRow(row2,document.getElementById('m2'));
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
